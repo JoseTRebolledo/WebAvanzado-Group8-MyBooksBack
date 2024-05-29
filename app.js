@@ -13,7 +13,7 @@ var app = express();
 
 const orm = require('./models');
 
-
+app.locals.orm = orm;
 
 app.use(logger('dev'));
 app.use(express.json());

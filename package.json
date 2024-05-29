@@ -5,8 +5,10 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "migrate:up": "npx sequelize-cli db:migrate",
-    "migrate:undo": "npx sequelize-cli db:migrate:undo"
+    "db:create": "sequelize db:create",
+    "db:migrate": "sequelize db:migrate",
+    "db:undoMigrate": "sequelize db:migrate:undo",
+    "db:drop": "sequelize db:drop"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
