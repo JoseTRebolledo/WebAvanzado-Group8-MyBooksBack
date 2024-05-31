@@ -1,0 +1,77 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Users",
+    "collectionId": "2831425c-029c-4b62-8da5-7f0efa15081b",
+    "dateExported": "2024-05-31T04:38:07.916Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "9206956a-5192-4bbb-ba53-c62ed510a4b5",
+            "colId": "2831425c-029c-4b62-8da5-7f0efa15081b",
+            "containerId": "",
+            "name": "Get user",
+            "url": "localhost:3000/users/1",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-31T01:13:39.124Z",
+            "modified": "2024-05-31T01:13:39.124Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "4feecef6-f86c-477d-b5b8-2544fa2d0fc6",
+            "colId": "2831425c-029c-4b62-8da5-7f0efa15081b",
+            "containerId": "",
+            "name": "Post users",
+            "url": "localhost:3000/users",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-31T01:14:26.156Z",
+            "modified": "2024-05-31T01:14:26.156Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"username\": \"tottus\",\r\n  \"email\": \"tottus@gmail.com\",\r\n  \"password\": \"dnrrnd\"\r\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "f0e89b90-8bbc-48b0-94ed-72e25e5e8a1e",
+            "colId": "2831425c-029c-4b62-8da5-7f0efa15081b",
+            "containerId": "",
+            "name": "Users login",
+            "url": "localhost:3000/users/login",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-05-31T01:20:02.365Z",
+            "modified": "2024-05-31T01:25:09.532Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"tottus\",\n  \"password\": \"dnrrnd\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "c197a87b-921e-403a-a95c-fc9abd8dd198",
+            "colId": "2831425c-029c-4b62-8da5-7f0efa15081b",
+            "containerId": "",
+            "name": "GetAll",
+            "url": "localhost:3000/users/getAll",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-05-31T01:44:02.189Z",
+            "modified": "2024-05-31T01:44:02.189Z",
+            "headers": []
+        }
+    ],
+    "ref": "E8rkKMA0KsslX1k8RcAA4xhhVrVY0-dy13wb8J2aAhOke2rKmoKT4ubGNk86dhl1LuIpEHHFmW0Zt4ZTyC2uMg"
+}
