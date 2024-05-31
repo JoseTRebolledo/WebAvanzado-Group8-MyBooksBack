@@ -14,11 +14,9 @@ const standardPage = 1;
 
 
 router.get('/searchByTitle', async function(req, res) {
-
-  const { title, limit, sortedBy, page} = req.body;
-  const query = getSearchByTitleQuery(title, limit, sortedBy, page);
-
     try {
+        const { title, limit, sortedBy, page} = req.body;
+        const query = getSearchByTitleQuery(title, limit, sortedBy, page);
         const apiResponse = await axios.get(query);
         const maxPages = calculateMaxPages(apiResponse.data.numFound, limit);
         const response = {
@@ -35,9 +33,9 @@ router.get('/searchByTitle', async function(req, res) {
 
 router.get('/searchByKey', async function(req, res) {
 
-    const key = req.body.key;
-    const booksQuery = getSearchByKeyQuery(key);
     try {
+        const key = req.body.key;
+        const booksQuery = getSearchByKeyQuery(key);
         const apiBookResponse = await axios.get(booksQuery);
         const authors = await findBookAuthors(apiBookResponse.data.authors);
         const response = {

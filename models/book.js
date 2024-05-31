@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Book.init({
-    apiId: DataTypes.STRING
+    key: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Book',

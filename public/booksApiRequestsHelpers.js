@@ -52,5 +52,6 @@ function getSearchAuthorQuery(key){
 module.exports = {
     getSearchByTitleQuery,
     calculateMaxPages,
-    getSearchByKeyQuery
+    getSearchByKeyQuery,
+    getSearchAuthorQuery
   };
