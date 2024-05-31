@@ -15,3 +15,5 @@
 - Correr app: ```npm run start``` o ```npm run dev```
 
 - Para resetear la base de datos: ```npm run db:drop``` y luego volverla a crear y migrar.
+
+- En ```/thunderApi``` se encuentran colecciones de la extension thunder client con los enpoints existentes en la api. Instalar la extension y luego importar las colecciones para utilizarlas. 
