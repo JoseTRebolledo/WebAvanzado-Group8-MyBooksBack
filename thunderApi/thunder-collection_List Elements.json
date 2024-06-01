@@ -1,0 +1,82 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "List Elements",
+    "collectionId": "6c3163ff-b59d-4e49-a16b-1e9a52ff7382",
+    "dateExported": "2024-06-01T17:53:56.161Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "f45e67cd-4ce4-4c54-9a8b-7e16fcadf025",
+            "colId": "6c3163ff-b59d-4e49-a16b-1e9a52ff7382",
+            "containerId": "",
+            "name": "New List Element",
+            "url": "localhost:3000/listElements/",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-06-01T17:31:43.218Z",
+            "modified": "2024-06-01T17:31:43.218Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userId\": 1, \n  \"key\": \"/works/OL27448W\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "54e6beda-f487-48b1-83d5-1cabd199062d",
+            "colId": "6c3163ff-b59d-4e49-a16b-1e9a52ff7382",
+            "containerId": "",
+            "name": "Get List Element",
+            "url": "localhost:3000/listElements/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-06-01T17:32:32.814Z",
+            "modified": "2024-06-01T17:32:32.814Z",
+            "headers": []
+        },
+        {
+            "_id": "8f4eec24-586b-4717-8c3f-aeec825e32ab",
+            "colId": "6c3163ff-b59d-4e49-a16b-1e9a52ff7382",
+            "containerId": "",
+            "name": "Get User List",
+            "url": "localhost:3000/listElements/userList/1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-06-01T17:36:48.272Z",
+            "modified": "2024-06-01T17:36:48.272Z",
+            "headers": []
+        },
+        {
+            "_id": "d493fbbd-1999-4432-abde-ea494e0252cf",
+            "colId": "6c3163ff-b59d-4e49-a16b-1e9a52ff7382",
+            "containerId": "",
+            "name": "Update List Element",
+            "url": "localhost:3000/listElements/1",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-06-01T17:46:41.141Z",
+            "modified": "2024-06-01T17:46:41.141Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"state\": \"Completed\",\n  \"score\": 10\n}",
+                "form": []
+            },
+            "docs": "Si se envia solo state se actualiza solo state, igual que con score.\n\nSi se envian ambos se actualizan ambos."
+        },
+        {
+            "_id": "45770b58-76e1-4c3a-8b8b-9a762b445966",
+            "colId": "6c3163ff-b59d-4e49-a16b-1e9a52ff7382",
+            "containerId": "",
+            "name": "Delete List Element",
+            "url": "localhost:3000/listElements/3",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-06-01T17:51:58.102Z",
+            "modified": "2024-06-01T17:52:33.951Z",
+            "headers": []
+        }
+    ],
+    "ref": "OzD5gwiKMuoIT9oM6EqUQmswbpDLmafbIZqZ1fr9andY92-iMZEuCd2Lkjcsoj9FZDxorIX5llx-a6PW39achQ"
+}

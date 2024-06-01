@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "Recomendations",
     "collectionId": "eb0f29b9-b6c0-4a89-b460-cab024cc1a10",
-    "dateExported": "2024-05-31T04:38:49.136Z",
+    "dateExported": "2024-06-01T17:53:14.858Z",
     "version": "1.2",
     "folders": [],
     "requests": [
@@ -46,7 +46,19 @@
             "created": "2024-05-31T03:26:46.277Z",
             "modified": "2024-05-31T03:26:46.277Z",
             "headers": []
+        },
+        {
+            "_id": "2d26971c-1fdf-4c0b-bac3-20e95a305913",
+            "colId": "eb0f29b9-b6c0-4a89-b460-cab024cc1a10",
+            "containerId": "",
+            "name": "Get recomendation",
+            "url": "localhost:3000/recomendations/1",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-06-01T17:25:08.160Z",
+            "modified": "2024-06-01T17:25:08.160Z",
+            "headers": []
         }
     ],
-    "ref": "6XKDVXUEVDO80SEWnn-NJihRk5xNcrCmx3zaxk7KmYwDXVKsa4Dl6Ptvjfz2PaPT73IXvYng2Pd2k44fh_LcDw"
+    "ref": "6XKDVXUEVDO80SEWnn-NJoNTPAfRigsfv2fltsUVN_0t-rjdbKSXNJxWV5cD0axK4fPzRoACErdMANDb4grmDw"
 }

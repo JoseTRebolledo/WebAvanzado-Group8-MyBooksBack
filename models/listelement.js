@@ -23,11 +23,19 @@ module.exports = (sequelize, DataTypes) => {
   }
   ListElement.init({
     state: DataTypes.STRING,
+    score: {
+      type: DataTypes.INTEGER,
+      validate: {
+        max: 10,
+        min: 1
+      }
+
+    },
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    key: {
+    bookId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     }

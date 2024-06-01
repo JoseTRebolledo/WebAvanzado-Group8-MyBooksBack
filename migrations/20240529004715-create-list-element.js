@@ -13,6 +13,13 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
+      score: {
+        type: Sequelize.INTEGER,
+        validate: {
+          max: 10,
+          min: 1
+        }
+      },
       userId: {
         allowNull: false,
         type: Sequelize.INTEGER,

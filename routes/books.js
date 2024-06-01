@@ -7,9 +7,6 @@ var router = express.Router();
 
 const axios = require('axios');
 
-const standardLimit = 20;
-const standardSortBy = "rating";
-const standardPage = 1;
 
 
 

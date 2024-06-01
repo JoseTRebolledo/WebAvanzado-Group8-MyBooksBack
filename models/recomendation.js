@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Recomendation.init({
-    content: DataTypes.STRING,
+    content: DataTypes.TEXT,
     bookId: {
       type: DataTypes.INTEGER,
       allowNull: false,

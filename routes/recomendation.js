@@ -67,21 +67,12 @@ router.get('/made/:userId', async function(req, res) {
     try {
         const orm = req.app.locals.orm;
         const {userWhoRecomendsId, userWhoGetsRecomendedId, content, key} = req.body;
-        const userWhoRecomends = await orm.User.findOne({
-        where: {
-            id: userWhoRecomendsId
-        }
-        })
-        const userWhoGetsRecomended = await orm.User.findOne({
-            where: {
-                id: userWhoGetsRecomendedId
-            }
-        })
+
         const book = await getBook(orm.Book, key);
 
         const newRecommendation = await orm.Recomendation.create({
-            recommenderId: userWhoRecomends.id,
-            recommendedToId: userWhoGetsRecomended.id,
+            recommenderId: userWhoRecomendsId,
+            recommendedToId: userWhoGetsRecomendedId,
             content: content,
             bookId: book.id
           });
@@ -92,6 +83,22 @@ router.get('/made/:userId', async function(req, res) {
     catch (error){
         console.error('Error al intentar crear la recomendacion', error);
         res.status(500).json({ error: 'Error al intentar crear la recomendacion' });
+    }
+  });
+
+  router.get('/:id', async function(req, res){
+    try {
+        const recomendation = await req.app.locals.orm.Recomendation.findOne({
+            where:{
+                id: req.params.id
+            }
+        });
+        res.status(200);
+        res.json(recomendation);
+    }
+    catch (error){
+        console.error('Error al intentar encontrar la recomendacion', error);
+        res.status(400).json({ error: 'Error al intentar encontrar la recomendacion' });
     }
   });
 

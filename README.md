@@ -2,7 +2,7 @@
 
 # Para iniciar el back
 
-- Crear archivo .env con las variables en .env.example
+- Crear archivo .env con las variables en ```.env.example```
 
 - Iniciar una base de datos, idealmente postgres
 
