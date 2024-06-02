@@ -30,8 +30,8 @@ router.get("/searchByTitle", async function (req, res) {
 
 router.get("/searchByKey", async function (req, res) {
   try {
-    const key = req.body.key;
-    const booksQuery = getSearchByKeyQuery(key);
+    const { key } = req.query;
+    const booksQuery = getSearchByKeyQuery(`/works/${key}`);
     const apiBookResponse = await axios.get(booksQuery);
     const authors = await findBookAuthors(apiBookResponse.data.authors);
     const response = {
