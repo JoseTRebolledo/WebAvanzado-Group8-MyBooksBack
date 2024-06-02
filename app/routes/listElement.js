@@ -28,6 +28,7 @@ function createIncludeOptions(orm){
 router.get('/userList/:userId', async function(req, res) {
   try {
     const { state } = req.query;
+    const whereCondition = state ? { state } : {};
     const user = await req.app.locals.orm.User.findOne({
       where: {
         id: req.params.userId
@@ -35,9 +36,7 @@ router.get('/userList/:userId', async function(req, res) {
     })
     const listElements = await user.getListElements({
         include: createIncludeOptions(req.app.locals.orm),
-        where: {
-          state: state
-        }
+        where: whereCondition
     });
     res.status(200);
     res.json(listElements);
@@ -76,7 +75,7 @@ router.get('/userList/:userId', async function(req, res) {
         const {state, score} = req.body;
         const listElement = await req.app.locals.orm.ListElement.findOne({
             where:{
-                id: req.params.listElementId
+                id: req.params.id
             }
         });
         listElement.update({
