@@ -1,0 +1,70 @@
+{
+    "info": {
+        "_postman_id": "5ecd6f66-f1d5-4d1a-ad4d-5845818a534a",
+        "name": "Books",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "SearchByTitle",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost:3000/books/searchByTitle/?title=the lord of the rings&limit=20&page=1&sortedBy=rating",
+                    "query": [
+                        {
+                            "key": "title",
+                            "value": "the lord of the rings"
+                        },
+                        {
+                            "key": "limit",
+                            "value": "20"
+                        },
+                        {
+                            "key": "page",
+                            "value": "1"
+                        },
+                        {
+                            "key": "sortedBy",
+                            "value": "rating"
+                        }
+                    ],
+                    "variable": [],
+                    "path": [
+                        "books",
+                        "searchByTitle"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        },
+        {
+            "name": "SearchByKey",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost:3000/books/searchByKey?key=OL27448W",
+                    "query": [
+                        {
+                            "key": "key",
+                            "value": "OL27448W"
+                        }
+                    ],
+                    "variable": [],
+                    "path": [
+                        "books",
+                        "searchByKey"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        }
+    ]
+}

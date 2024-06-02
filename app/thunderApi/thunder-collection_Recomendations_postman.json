@@ -1,0 +1,88 @@
+{
+    "info": {
+        "_postman_id": "8f44f65a-f62a-439e-9344-0cf770d01738",
+        "name": "Recomendations",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "New Recomendation",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "localhost:3000/recomendations",
+                    "path": [
+                        "recomendations"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"userWhoRecomendsId\": 1, \n  \"userWhoGetsRecomendedId\": 2,\n  \"content\": \"wena la wea\",\n  \"key\": \"/works/OL27448W\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Get recomendations made",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost:3000/recomendations/made/1",
+                    "path": [
+                        "recomendations",
+                        "made",
+                        "1"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        },
+        {
+            "name": "Get recomendations received",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost:3000/recomendations/received/2",
+                    "path": [
+                        "recomendations",
+                        "received",
+                        "2"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        },
+        {
+            "name": "Get recomendation",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost:3000/recomendations/1",
+                    "path": [
+                        "recomendations",
+                        "1"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                }
+            }
+        }
+    ]
+}

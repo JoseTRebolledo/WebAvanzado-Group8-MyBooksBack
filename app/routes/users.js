@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 
-router.get('/login', async function(req, res) {
+router.post('/login', async function(req, res) {
   try {
     const user = await req.app.locals.orm.User.findOne({
       where: {

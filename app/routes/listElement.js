@@ -5,6 +5,7 @@ const {getBook} = require("../public/createBooksHelpers");
 const { where } = require('sequelize');
 
 const states = {
+    completed: "Completed",
     reading: "Reading",
     onHold: "On Hold",
     planToRead: "Plan to read",
@@ -26,13 +27,17 @@ function createIncludeOptions(orm){
 
 router.get('/userList/:userId', async function(req, res) {
   try {
+    const { state } = req.query;
     const user = await req.app.locals.orm.User.findOne({
       where: {
         id: req.params.userId
       }
     })
     const listElements = await user.getListElements({
-        include: createIncludeOptions(req.app.locals.orm)
+        include: createIncludeOptions(req.app.locals.orm),
+        where: {
+          state: state
+        }
     });
     res.status(200);
     res.json(listElements);

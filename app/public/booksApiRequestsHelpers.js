@@ -1,4 +1,4 @@
-const requireFields = ["title", "author_name", "cover_i", "first_publish_year", "key", "first_sentence"];
+const requireFields = ["title", "author_name", "cover_i", "first_publish_year", "key", "first_sentence", "isbn"];
 const searchJson = "search.json?"
 const booksApiPath = "https://openlibrary.org/"
 const works = "works";
