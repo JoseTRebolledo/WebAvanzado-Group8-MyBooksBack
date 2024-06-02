@@ -14,7 +14,16 @@ async function getBook(booksModel, key){
     return book;
 }
 
+async function checkIfBookInDataBase(booksModel, key){
+    let book =  await booksModel.findOne({
+        where: {
+            key: key
+        }
+    });
+    return book;
+}
 
 module.exports = {
-    getBook
+    getBook,
+    checkIfBookInDataBase
   };

@@ -1,7 +1,7 @@
 const requireFields = ["title", "author_name", "cover_i", "first_publish_year", "key", "first_sentence", "isbn"];
 const searchJson = "search.json?"
 const booksApiPath = "https://openlibrary.org/"
-const works = "works";
+const works = "/works/";
 const json = ".json";
 const standardLimit = 20;
 const standardSortBy = "rating";
@@ -42,7 +42,7 @@ function calculateMaxPages(items, limit=standardLimit){
 }
 
 function getSearchByKeyQuery(key){
-    return `${booksApiPath}${key}${json}`;
+    return `${booksApiPath}${works}${key}${json}`;
 }
 
 function getSearchAuthorQuery(key){

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const {getBook} = require("../public/createBooksHelpers");
+const {getBook, checkIfBookInDataBase} = require("../public/createBooksHelpers");
 const { where } = require('sequelize');
 
 const states = {
@@ -24,6 +24,46 @@ function createIncludeOptions(orm){
     return options;
 }
 
+router.get('/userList/getByKey/:userId/:bookKey', async function(req, res) {
+  try {
+    const orm = req.app.locals.orm;
+    const book = await checkIfBookInDataBase(orm.Book, req.params.bookKey);
+    let userHasBook = true;
+    let listElement = [];
+    if (!book){
+      userHasBook = false;
+    }
+    else {
+      
+    
+    const user = await orm.User.findOne({
+      where: {
+        id: req.params.userId
+      }
+    })
+    listElement = await user.getListElements({
+        include: createIncludeOptions(orm),
+        where: {
+          bookId: book.id
+        }
+    });
+    if (!listElement){
+      userHasBook = false;
+    }
+    }
+    res.status(200);
+    console.log(userHasBook);
+    responseJson = {
+      userHasBook: userHasBook,
+      listElement: listElement[0]
+    }
+    res.json(responseJson);
+  }
+  catch (error){
+    console.error('Error al intentar conseguir la lista del usuario', error);
+    res.status(400).json({ error: 'Error al intentar conseguir la lista del usuario' });
+  }
+});
 
 router.get('/userList/:userId', async function(req, res) {
   try {
