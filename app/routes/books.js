@@ -34,7 +34,6 @@ router.get("/searchByKey", async function (req, res) {
     const booksQuery = getSearchByKeyQuery(`/works/${key}`);
     const apiBookResponse = await axios.get(booksQuery);
     const authors = await findBookAuthors(apiBookResponse.data.authors);
-    apiBookResponse.data.isbn = apiBookResponse.data.isbn[0];
     const response = {
       book: apiBookResponse.data,
       authors: authors,
@@ -50,7 +49,7 @@ router.get("/searchByKey", async function (req, res) {
 async function findBookAuthors(authors) {
   const authorPromises = authors.map(async (authorObj) => {
     const authorKey = authorObj.author.key;
-    const authorQuery = getSearchByKeyQuery(authorKey);
+    const authorQuery = getSearchAuthorQuery(authorKey);
     const response = await axios.get(authorQuery);
     return response.data.name;
   });

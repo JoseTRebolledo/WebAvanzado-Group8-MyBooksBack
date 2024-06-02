@@ -38,7 +38,7 @@ function getSearchByTitleQuery(title, limit=standardLimit, sortedBy=standardSort
 }
 
 function calculateMaxPages(items, limit=standardLimit){
-    return Math.ceil(items / standardLimit)
+    return Math.ceil(items / limit)
 }
 
 function getSearchByKeyQuery(key){
@@ -49,9 +49,10 @@ function getSearchAuthorQuery(key){
     return `${booksApiPath}${key}${json}`;
 }
 
+
 module.exports = {
     getSearchByTitleQuery,
     calculateMaxPages,
     getSearchByKeyQuery,
-    getSearchAuthorQuery
+    getSearchAuthorQuery,
   };
