@@ -47,7 +47,7 @@ router.get('/userList/getByKey/:userId/:bookKey', async function(req, res) {
           bookId: book.id
         }
     });
-    if (!listElement){
+    if (!listElement[0]){
       userHasBook = false;
     }
     }
